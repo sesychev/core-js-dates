@@ -175,12 +175,12 @@ function formatDate(date) {
 function getCountWeekendsInMonth(month, year) {
   const arr = [];
 
-  for (let i = 0; i <= new Date(year, month - 1, 0).getDate(); i += 1) {
+  for (let i = 1; i <= new Date(year, month, 0).getDate(); i += 1) {
     const date = new Date(year, month - 1, i);
     if (date.getDay() === 6 || date.getDay() === 0) arr.push(date);
   }
 
-  return arr;
+  return arr.length;
 }
 
 /**
